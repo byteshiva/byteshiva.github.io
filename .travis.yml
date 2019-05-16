@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '10'
+  - 'stable'
 install:
   - npm install -g codecov
 script:
@@ -14,3 +14,10 @@ cache:
   directories:
     - node_modules
     - flow-typed
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on:
+branch: dev    
